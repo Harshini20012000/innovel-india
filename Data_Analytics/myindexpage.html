@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .whole {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff8177,#8086f0, #ff817700);
+            background-size: 200% 200%; /* Ensure smooth gradient animation */
+            animation: gradientShift 6s infinite; /* Gradient animation */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #333;
+            text-align: center;
+            flex-direction: column; /* Align content vertically */
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        #drag-container {
+            position: relative;
+            width: 100vh;
+            height: 100vh;
+            transform-style: preserve-3d;
+            transform: rotateX(-10deg);
+            animation: rotation 20s infinite linear;
+        }
+
+        @keyframes rotation {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .image-container {
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            transform-origin: center;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 35vh;
+            height: 30vh;
+            object-fit: cover;
+            border-radius: 25px;
+            box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); /* Glow effect */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
+            box-shadow: 0 0 25px 10px rgba(255, 255, 255, 1); /* Stronger glow on hover */
+        }
+
+        .title {
+            color: #fff;
+            font-size: 3vh;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            margin-bottom: 2vh;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 150px;
+            height: auto;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+<div class="whole">
+    <img src="assets\images\logo.png" alt="Logo" class="logo">
+
+    <div id="drag-container">
+        <!-- Image 1 -->
+        <div class="image-container" style="transform: rotateY(0deg) translateZ(240px)">
+            <div class="title">Data Analytics</div>
+            <a href="data.html">
+                <img src="assets\images\pic1.jpg" alt="Image 1">
+            </a>
+        </div>
+
+        <!-- Image 2 -->
+        <!--<div class="image-container" style="transform: rotateY(60deg) translateZ(240px)">
+            <div class="title">Concepts</div>
+            <a href="concepts.html">
+                <img src="assets\images\pic4.jpg" alt="Image 2">
+            </a>
+        </div>!-->
+
+        <!-- Image 3 -->
+        <div class="image-container" style="transform: rotateY(120deg) translateZ(240px)">
+            <div class="title">RealTime Projects</div>
+            <a href="realtime-projects.html">
+                <img src="assets\images\pic3.png" alt="Image 3">
+            </a>
+        </div>
+
+        <!-- Image 4 -->
+        <div class="image-container" style="transform: rotateY(180deg) translateZ(240px)">
+            <div class="title">Jobs</div>
+            <a href="jobrole.html">
+                <img src="assets\images\pic2.jpg" alt="Image 4">
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    var radius = 240;  // Radius of the rotation effect
+
+    function rotateImages() {
+        const images = document.querySelectorAll('.image-container');
+        const totalImages = images.length;
+        const angleStep = 360 / totalImages;
+
+        images.forEach((image, index) => {
+            image.style.transform = `rotateY(${index * angleStep}deg) translateZ(${radius}px)`;
+        });
+    }
+
+    rotateImages(); // Initialize the image rotation
+</script>
+<script>
+    window.addEventListener('popstate', function () {
+      // Redirect to homepage when back button is clicked
+      window.location.href = 'website/new.html'; // Adjust the path to your homepage
+    });
+  </script>
+</body>
+</html>

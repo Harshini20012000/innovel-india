@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>BOOTSTRAP</title> 
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        body {
+            margin: 0; 
+            padding: 0;
+            background: #08091d; 
+        }
+        .logo {
+            position: absolute;
+            top: 55px;
+            left: 120px;
+            width: 150px;
+            height: auto;
+            z-index: 10;
+        }
+        .whole{
+            height: 100vh;
+            background: linear-gradient(45deg, #ff8177,#8086f0, #ff817700);
+
+
+        }
+        h2 {
+            font-family: 'Bebas Neue', cursive;
+            color: #fff;
+            text-align: center;
+            margin: 0px 0 -50px;
+            padding-bottom: 20px;
+      
+          
+        }
+        .carousel{
+            height: 500px; 
+            perspective: 200px;
+        }
+        .carousel .carousel-item{
+            width: 640px;
+            height: 400px;
+        }
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            max-width: 500px;
+            margin: auto;
+            text-align: center;
+            border-radius: 10px;
+            height: 450px;
+          }
+        .img-area{
+            border-radius: 10px 10px 0 0;
+            height: 200px;
+            background-size: cover;
+            background-position: center center;
+        }
+        h4 {
+            font-size: 35px;
+            line-height: 1.5;
+            margin: 15px 0;
+            font-family: 'Bebas Neue', cursive;
+        }
+        .card p{
+            font-size: 17px;
+        }
+        
+        .container {
+          padding: 2px 16px;
+        }
+        .para{
+            font-size: 17px;
+            color: white;
+            line-height: 50px;
+            text-align: center;
+        }
+        
+        .b2h{
+            border-radius: 50%;
+            margin-top: 20px;
+            margin: 40px 0 -50px 30px;
+        }
+        
+      
+        
+    </style> 
+</head>
+<body>
+
+      <div class="whole">
+        <img src="../images/logo.png" width="200px" class="logo" height="80px" alt="">
+
+        <a href="../carousel/caro.html"> <img src="../images/b2h.gif" width="70px" height="70px" class="b2h" alt=""></a>
+
+        <h2 class="heading">BOOTSTRAP</h2>
+        <p class="para">Enables designers and developers to build completely responsive websites quickly. </p>
+          <div class="carousel">
+              
+              <div class="carousel-item">
+                  <div class="card">
+                      <div class="img-area">
+                          <img src="../images/navbar.gif" height="220px" alt="">
+                      </div>
+                      <div class="container">
+                          <h4>NAVBAR</h4>
+                  
+                          <p>It helps users navigate through a website or application by providing clickable links to different pages or sections</p>
+                          <a href="../images/navbar.gif"><button class="btn">Explore</button></a>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="card">
+                      <div class="img-area">
+                          <img src="../images/responsive.gif" height="200px" alt="">
+                      </div>
+                      <div class="container">
+                          <h4>RESPONSIVE DESIGN</h4>
+                          <p>It method of designing web pages so that they look and function well on various devices and screen sizes.</p>
+                          <a href="../images/responsive.gif"><button class="btn">Explore</button></a>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="card">
+                      <div class="img-area">
+                          <img src="../images/carousel.gif" height="200px" alt="">
+                      </div>  
+                      <div class="container">
+                          <h4><b>CAROUSEL</b></h4>
+                          <p>It is used on various visual social media platforms to display images and videos consecutively. </p>
+                         <a href="../images/carousel.gif"><button class="btn">Explore</button></a> 
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="card">
+                      <div class="img-area" >
+                          <img src="../images/modal.gif" width="300px" alt="">
+                      </div>
+                      <div class="container">
+                          <h4><b>MODAL</b></h4>
+                          <p> It is used to add dialogs to your site for lightboxes, user notifications, or completely custom content.</p>
+                       <a href="../images/modal.gif">   <button class="btn">Explore</button></a>
+                      </div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="card">
+                      <div class="img-area">
+                          <img src="../images/offcanva.gif" height="200px" alt="">
+                      </div>
+                      <div class="container">
+                          <h4><b>OFFCANVAS</b></h4>
+                          <p>Offcanvas is a sidebar component that can be toggled via JavaScript to appear from the left, right, or bottom edge of the viewport.</p>
+                         <a href="../images/offcanva.gif"><button class="btn">Explore</button></a> 
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    
+    <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.carousel').carousel({
+			padding: 200
+	});
+	autoplay();
+	function autoplay() {
+		$('.carousel').carousel('next');
+		setTimeout(autoplay, 3000);
+	}
+  });
+</script>
+</body>
+</html>
